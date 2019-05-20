@@ -45,17 +45,14 @@ end
 ```
 The data is `movies.json` was pulled from Wikipedia.
 ## Known Issues
-- The app is naive in its treatment of arrays and nested objects in the JSON it searches. Searchable fields are only those properties located
-on the first level of the JSON objects provided by the `db` folder's JSON files. The app assumes that all objects in a given JSON file have
-the same properties. Searching on a field that has an array as a value is possible, but, as with every other searchable field, only exact
-matches will turn up results (e.g. an organization for which 'tags' equals '["Fulton", "West", "Rodriguez", "Farley"]' will match a search
-value of exactly '["Fulton", "West", "Rodriguez", "Farley"]', but will not match 'Fulton' or '["West", "Fulton", "Rodriguez", "Farley"]').
-- The app expects each category name to match the name of a JSON file in `db` (e.g. 'movies' matches 'db/movies.json'). Not only is this brittle,
-but due to the way category names currently get displayed, it's also pretty easy to end up with some ugly category options 
+### Arrays and nested objects
+The app is naive in its treatment of arrays and nested objects in the JSON it searches. Searchable fields are only those properties located on the first level of the JSON objects provided by the `db` folder's JSON files. The app assumes that all objects in a given JSON file have the same properties. Searching on a field that has an array as a value is possible, but, as with every other searchable field, only exact matches will turn up results (e.g. an organization for which 'tags' equals '["Fulton", "West", "Rodriguez", "Farley"]' will match a search value of exactly '["Fulton", "West", "Rodriguez", "Farley"]', but will not match 'Fulton' or '["West", "Fulton", "Rodriguez", "Farley"]').
+### Coupling between category names and JSON file names
+The app expects each category name to match the name of a JSON file in `db` (e.g. 'movies' matches 'db/movies.json'). Not only is this brittle, but due to the way category names currently get displayed, it's also pretty easy to end up with some ugly category options 
 (e.g. 'db/pull_requests.json' would need a matching 'pull_requests' category name. In the app, this would get displayed as 'Pull_requests').  
-- The test fixtures containing the output to STDOUT from running through various scenarios with the app (`test/fixtures/*_output.txt`) all
-list the values of the 'user' inputs (mocked by piping in strings from one of `test/fixtures/*_input.txt`) before everything else. For some
-reason I haven't figured out yet, that's the way the output for those scenarious consistently looks. For example, running
+### Odd output format in test fixtures
+The test fixtures containing the output to STDOUT from running through various scenarios with the app (`test/fixtures/*_output.txt`) all
+list the values of the 'user' inputs (mocked by piping in strings from one of `test/fixtures/*_input.txt`) before everything else. For some reason I haven't figured out yet, that's the way the output for those scenarios consistently looks. For example, running
 ```console
 foo@bar:~/zendesk_search$ cat test/fixtures/quit_input.txt | ruby zendesk_search.rb --environment test
 ```
@@ -72,7 +69,22 @@ Please enter your choice: quit
 
 Thank you for using Zendesk Search!
 ```
+but running that same line in the test file using backticks
+```ruby
+`cat test/fixtures/quit_input.txt | ruby zendesk_search.rb --environment test`
+```
+outputs
+```console
+Please enter your choice: quit
+Welcome to Zendesk Search!
+Type 'q' or 'quit' to exit at any time
 
-Add category.json and ‘4’ => ‘categories’
+========== SEARCH OPTIONS ==========
+1) Search Zendesk
+2) View a list of searchable fields
 
-
+Thank you for using Zendesk Search!
+```
+Notice how 'Please enter your choice: quit' appears at the top of the latter output.
+## Feedback
+I'm always looking for ways to improve. Feel free to [email me](mailto:mark@markcuipan.com). Any feedback is welcome!
