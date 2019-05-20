@@ -8,8 +8,8 @@ require './zd_search_policy'
 # the ZdReadonlyDatastore class. It defers to ZdSearchPolicy for mapping user /
 # inputs to commands it understands.
 class ZdSearchEngine
-  def initialize
-    @datastore = ZdReadonlyDatastore.new
+  def initialize(env: 'prod')
+    @datastore = ZdReadonlyDatastore.new(env: env)
   end
 
   def run

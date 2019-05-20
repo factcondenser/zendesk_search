@@ -1,0 +1,61 @@
+Please enter your choice: 1
+Please enter your choice: 2
+Enter name of field to search on: description
+Enter search value. To search for empty values, just press 'Enter':
+Please enter your choice: q
+Welcome to Zendesk Search!
+Type 'q' or 'quit' to exit at any time
+
+========== SEARCH OPTIONS ==========
+1) Search Zendesk
+2) View a list of searchable fields
+
+
+========== PICK A CATEGORY ==========
+1) Users
+2) Tickets
+3) Organizations
+
+
+Displaying 2 result(s) for Tickets with 'description' equal to '':
+_id:             87db32c5-76a3-4069-954c-7d59c6c21de0
+url:             http://initech.zendesk.com/api/v2/tickets/87db32c5-76a3-4069-954c-7d59c6c21de0.json
+external_id:     1c61056c-a5ad-478a-9fd6-38889c3cd728
+created_at:      2016-07-06T11:16:50 -10:00
+type:            problem
+subject:         This ticket's description is empty
+description:
+priority:        urgent
+status:          solved
+submitter_id:    14
+assignee_id:     7
+organization_id: 118
+tags:            ["Texas", "Nevada", "Oregon", "Arizona"]
+has_incidents:   true
+due_at:          2016-08-19T07:40:17 -10:00
+via:             voice
+----------------------------------------
+_id:             5aa53572-b31c-4d27-814b-11709ab00259
+url:             http://initech.zendesk.com/api/v2/tickets/5aa53572-b31c-4d27-814b-11709ab00259.json
+external_id:     c38e866e-0b2e-4207-a7da-bc4c2cb5eb8f
+created_at:      2016-02-11T04:46:29 -11:00
+type:            question
+subject:         This ticket's description is null
+description:
+priority:        normal
+status:          hold
+submitter_id:    73
+assignee_id:     44
+organization_id: 107
+tags:            ["South Carolina", "Indiana", "New Mexico", "Nebraska"]
+has_incidents:   true
+due_at:          2016-08-23T01:54:35 -10:00
+via:             voice
+----------------------------------------
+End of 2 result(s)
+
+========== SEARCH OPTIONS ==========
+1) Search Zendesk
+2) View a list of searchable fields
+
+Thank you for using Zendesk Search!

@@ -1,0 +1,43 @@
+Please enter your choice: 2
+Please enter your choice: 1
+Please enter your choice: q
+Welcome to Zendesk Search!
+Type 'q' or 'quit' to exit at any time
+
+========== SEARCH OPTIONS ==========
+1) Search Zendesk
+2) View a list of searchable fields
+
+
+========== PICK A CATEGORY ==========
+1) Users
+2) Tickets
+3) Organizations
+
+
+Displaying all searchable fields for Users:
+_id
+url
+external_id
+name
+alias
+created_at
+active
+verified
+shared
+locale
+timezone
+last_login_at
+email
+phone
+signature
+organization_id
+tags
+suspended
+role
+
+========== SEARCH OPTIONS ==========
+1) Search Zendesk
+2) View a list of searchable fields
+
+Thank you for using Zendesk Search!

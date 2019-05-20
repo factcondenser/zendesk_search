@@ -1,8 +1,14 @@
-require 'test_helper'
-require 'zd_search_engine'
+# frozen_string_literal: true
+
+require_relative './test_helper'
+require_relative '../zd_search_engine'
 
 describe ZdSearchEngine do
-  it 'returns "1" when receives 1' do
-    assert '1', FizzBuzz.new.convert(1)
+  subject { ZdSearchEngine.new(env: 'test') }
+
+  it 'initializes readonly datastore' do
+  end
+
+  it 'makes calls to ZdSearchConsole and ZdSearchPolicy' do
   end
 end

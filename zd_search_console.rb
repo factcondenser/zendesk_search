@@ -64,7 +64,6 @@ module ZdSearchConsole
         col_width = results.first.keys.map(&:length).max
         results.each do |hsh|
           hsh.each do |k, v|
-            # pair = "#{k.to_s.rjust(col_width)}: #{v}"
             pair = "#{k}: ".ljust(col_width + 2) + v.to_s
             puts k == field ? pair.bold : pair
           end
@@ -89,12 +88,12 @@ module ZdSearchConsole
     private
 
     def obtain_input
-      stty_save = `stty -g`.chomp # Save terminal state
+      stty_save = `stty -g`.chomp if $stdin.isatty # Save terminal state
 
       begin
         yield
       rescue Interrupt => _e
-        system('stty', stty_save) # Restore
+        system('stty', stty_save) if $stdin.isatty # Restore terminal state
         puts
         notify_quit
         exit

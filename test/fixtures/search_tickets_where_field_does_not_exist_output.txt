@@ -1,0 +1,26 @@
+Please enter your choice: 1
+Please enter your choice: 2
+Enter name of field to search on: non-existent field
+Enter search value. To search for empty values, just press 'Enter': pending
+Please enter your choice: q
+Welcome to Zendesk Search!
+Type 'q' or 'quit' to exit at any time
+
+========== SEARCH OPTIONS ==========
+1) Search Zendesk
+2) View a list of searchable fields
+
+
+========== PICK A CATEGORY ==========
+1) Users
+2) Tickets
+3) Organizations
+
+
+No Tickets found with 'non-existent field' equal to 'pending'
+
+========== SEARCH OPTIONS ==========
+1) Search Zendesk
+2) View a list of searchable fields
+
+Thank you for using Zendesk Search!
