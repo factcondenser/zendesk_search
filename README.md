@@ -87,4 +87,4 @@ Thank you for using Zendesk Search!
 ```
 Notice how 'Please enter your choice: quit' appears at the top of the latter output.
 ## Feedback
-I'm always looking for ways to improve. Feel free to [email me](mailto:mark@markcuipan.com). Any feedback is welcome!
+I'm always looking for ways to improve, so feel free to [email me](mailto:mark@markcuipan.com). Any feedback is welcome!
