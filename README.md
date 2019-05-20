@@ -43,7 +43,7 @@ module ZdSearchPolicy
   ...
 end
 ```
-The data is `movies.json` was pulled from Wikipedia.
+The data in `movies.json` was pulled from Wikipedia.
 ## Known Issues
 ### Arrays and nested objects
 The app is naive in its treatment of arrays and nested objects in the JSON it searches. Searchable fields are only those properties located on the first level of the JSON objects provided by the `db` folder's JSON files. The app assumes that all objects in a given JSON file have the same properties. Searching on a field that has an array as a value is possible, but, as with every other searchable field, only exact matches will turn up results (e.g. an organization for which 'tags' equals '["Fulton", "West", "Rodriguez", "Farley"]' will match a search value of exactly '["Fulton", "West", "Rodriguez", "Farley"]', but will not match 'Fulton' or '["West", "Fulton", "Rodriguez", "Farley"]').
